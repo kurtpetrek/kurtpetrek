@@ -9,6 +9,18 @@ const StylingContainer = styled.div(
       "Segoe UI Symbol";
     text-align: center;
     padding: 16px 32px;
+
+    @media (max-width: 500px) {
+      font-size: 14px;
+    }
+
+    h1 {
+      font-size: 1.8em;
+    }
+
+    h2 {
+      font-size: 1.5em;
+    }
   `
 );
 
