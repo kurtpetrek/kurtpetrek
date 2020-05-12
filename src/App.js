@@ -1,15 +1,25 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import styled, { css } from "styled-components/macro";
+import WavingHand from "./components/WavingHand/WavingHand";
+import UnderConstruction from "./components/UnderConstruction/UnderConstruction";
+
+const Wrapper = styled.div(
+  (props) => css`
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+  `
+);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Kurt Petrek</p>
-      </header>
-    </div>
+    <Wrapper>
+      <WavingHand color="white" size="230px" />
+      <UnderConstruction fontColor="white" />
+    </Wrapper>
   );
 }
 
