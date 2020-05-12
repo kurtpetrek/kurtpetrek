@@ -8,6 +8,7 @@ const StylingContainer = styled.div(
       Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
       "Segoe UI Symbol";
     text-align: center;
+    padding: 16px 32px;
   `
 );
 
