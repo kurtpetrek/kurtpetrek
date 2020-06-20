@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components/macro";
-import WavingHand from "./components/WavingHand/WavingHand";
-import UnderConstruction from "./components/UnderConstruction/UnderConstruction";
+import UnderConstruction from "../../components/UnderConstruction/UnderConstruction";
+import WavingHand from "../../components/WavingHand/WavingHand";
 
 const Wrapper = styled.div(
   (props) => css`
@@ -14,13 +14,13 @@ const Wrapper = styled.div(
   `
 );
 
-function App() {
+const UnderConstructionPage = () => {
   return (
     <Wrapper>
       <WavingHand color="white" size="230px" />
       <UnderConstruction fontColor="white" />
     </Wrapper>
   );
-}
+};
 
-export default App;
+export default UnderConstructionPage;
