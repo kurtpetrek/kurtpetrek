@@ -2,12 +2,14 @@ import { createGlobalStyle } from "styled-components/macro";
 
 const GlobalStyles = createGlobalStyle`
   *, *::before, *::after {
-    box-sizing: border-box
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
   }
 
   html {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%; 
+    font-family: 'Open Sans', sans-serif;
   }
 
   body {
