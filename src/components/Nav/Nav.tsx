@@ -42,7 +42,7 @@ const Nav = () => {
     <NavContainer>
       <HomeLink to="/">Kurt Petrek</HomeLink>
       <StyledButtonHamburger isOpen={navIsOpen} toggleNav={toggleNav} />
-      <NavMainDropdown navIsOpen={navIsOpen}>ffoo</NavMainDropdown>
+      <NavMainDropdown navIsOpen={navIsOpen}>{null}</NavMainDropdown>
     </NavContainer>
   );
 };
