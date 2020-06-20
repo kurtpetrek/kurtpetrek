@@ -3,6 +3,9 @@ import styled, { css } from "styled-components/macro";
 import ButtonHamburger from "./Hamburger";
 import NavMainDropdown from "./NavMainDropdown";
 import { Link } from "react-router-dom";
+import AnimatedBar from "./AnimatedBar";
+import styleTheme from "../../constants/styles/styleTheme";
+import UnderConstructionPage from "../../pages/UnderConstructionPage/UnderConstructionPage";
 
 const NavContainer = styled.nav(
   (props) => css`
@@ -14,16 +17,17 @@ const NavContainer = styled.nav(
     display: flex;
     align-items: center;
     padding: 16px 32px;
-    background: ${props.theme.colors.ink500};
-    border-bottom: 1px solid ${props.theme.colors.white};
+    background: ${props.theme.colors.white};
+    border-bottom: 1px solid ${props.theme.colors.ink700};
   `
 );
 
 const HomeLink = styled(Link)(
   (props) => css`
-    font-size: 24px;
+    font-size: 28px;
     text-decoration: none;
-    color: ${props.theme.colors.white};
+    color: ${props.theme.colors.ink700};
+    font-weight: bold;
   `
 );
 
@@ -41,8 +45,15 @@ const Nav = () => {
   return (
     <NavContainer>
       <HomeLink to="/">Kurt Petrek</HomeLink>
+      <AnimatedBar
+        color={
+          navIsOpen ? styleTheme.colors.green200 : styleTheme.colors.ink200
+        }
+      />
       <StyledButtonHamburger isOpen={navIsOpen} toggleNav={toggleNav} />
-      <NavMainDropdown navIsOpen={navIsOpen}>{null}</NavMainDropdown>
+      <NavMainDropdown navIsOpen={navIsOpen}>
+        <UnderConstructionPage />
+      </NavMainDropdown>
     </NavContainer>
   );
 };

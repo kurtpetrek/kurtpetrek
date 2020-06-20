@@ -1,13 +1,22 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components/macro";
 import Nav from "../Nav/Nav";
+
+const LayoutContainer = styled.div(
+  (props) => css`
+    padding-top: ${props.theme.nav.height};
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  `
+);
 
 const LayoutMain = ({ children }) => {
   return (
-    <div>
+    <LayoutContainer>
       <Nav />
       {children}
-    </div>
+    </LayoutContainer>
   );
 };
 

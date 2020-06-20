@@ -28,67 +28,61 @@ const PanelAnimation = styled(Container)(
     opacity: 0.5;
     transform: translate(100vw);
     transition: 0.3s;
+
     ${props.navIsOpen
       ? css`
-          animation: PanelAnimation-left ${panelAnimationLength + "s"} forwards;
+          transform: translate(0);
+          border-radius: 0;
+          transition: ${panelAnimationLength + "s"};
         `
-      : ""}
-
-    @keyframes PanelAnimation-left {
-      0% {
-        transform: translate(100vw);
-      }
-      100% {
-        transform: translate(0vw);
-      }
-    }
+      : css`
+          transform: translate(100vw);
+          border-radius: 100%;
+          transition: ${panelAnimationLength + "s"}
+            ${panelAnimationLength * 2 + "s"};
+        `}
 
     &:nth-of-type(2) {
       background: ${props.theme.colors.yellow500};
       transform: translate(-100vw, 100vh);
-      transition: 0.3s;
+
       ${props.navIsOpen
         ? css`
-            animation: PanelAnimation-right ${panelAnimationLength + "s"}
-              ${panelAnimationLength + "s"} forwards;
+            transform: translate(0);
+            border-radius: 0;
+            transition: ${panelAnimationLength + "s"}
+              ${panelAnimationLength + "s"};
           `
-        : ""}
-
-      @keyframes PanelAnimation-right {
-        0% {
-          transform: translate(-100vw, 100vh);
-        }
-        100% {
-          transform: translate(0vw);
-        }
-      }
+        : css`
+            transform: translate(-100vw, 100vh);
+            border-radius: 100%;
+            transition: ${panelAnimationLength + "s"}
+              ${panelAnimationLength + "s"};
+          `}
     }
   `
 );
 
 const List = styled(PanelAnimation)(
   (props) => css`
-    background: ${props.theme.colors.ink500};
+    display: flex;
+    flex-direction: column;
+
+    background: ${props.theme.colors.white};
+    border-radius: 0;
     opacity: 1;
-    transform: translate(0, 100vh);
-    transition: 0.3s;
     ${props.navIsOpen
       ? css`
-          animation: PanelAnimation-bottom ${panelAnimationLength + "s"}
-            ${panelAnimationLength * 2 + "s"} forwards;
+          transform: translate(0);
+          border-radius: 0;
+          transition: ${panelAnimationLength + "s"}
+            ${panelAnimationLength * 2 + "s"};
         `
       : css`
           transform: translate(0, 100vh);
+          border-radius: 100%;
+          transition: ${panelAnimationLength + "s"};
         `}
-
-    @keyframes PanelAnimation-bottom {
-      0% {
-        transform: translate(0, 100vh);
-      }
-      100% {
-        transform: translate(0);
-      }
-    }
   `
 );
 

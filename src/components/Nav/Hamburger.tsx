@@ -25,7 +25,7 @@ const Bar = styled.span<{
   bottomBar?: boolean;
 }>(
   (props) => css`
-    background: ${props.theme.colors.white};
+    background: ${props.theme.colors.ink700};
     height: 3px;
     width: 100%;
     border-radius: 1px;
