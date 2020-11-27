@@ -187,7 +187,7 @@ const RainbowFooter = ({ className = "" }) => {
         </a>
 
         <a
-          href="https://codepen.io/KPCodes"
+          href="https://www.instagram.com/kurtpetrek/"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -225,7 +225,7 @@ const RainbowFooter = ({ className = "" }) => {
         </a>
 
         <a
-          href="https://codepen.io/KPCodes"
+          href="https://www.linkedin.com/in/kurtpetrek"
           target="_blank"
           rel="noopener noreferrer"
         >
