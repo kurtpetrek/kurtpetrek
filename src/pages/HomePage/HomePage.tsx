@@ -61,7 +61,7 @@ const HomePage = () => {
         At some point I am going to work on this...
       </Text>
       <Text>
-        While you wait, check out some things <br />
+        While you wait, check out what <br />
         I've created on{" "}
         <Link href="https://codepen.io/KPCodes/pens/showcase">Codepen</Link>
       </Text>
