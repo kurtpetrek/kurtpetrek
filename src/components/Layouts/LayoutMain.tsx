@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components/macro";
 import Nav from "../Nav/Nav";
+import RainbowFooter from "../RainbowFooter";
 
 const LayoutContainer = styled.div(
   (props) => css`
@@ -11,11 +12,16 @@ const LayoutContainer = styled.div(
   `
 );
 
+const StyledRainbowFooter = styled(RainbowFooter)`
+  margin-top: auto;
+`;
+
 const LayoutMain = ({ children }) => {
   return (
     <LayoutContainer>
       <Nav />
       {children}
+      <StyledRainbowFooter />
     </LayoutContainer>
   );
 };

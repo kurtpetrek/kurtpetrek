@@ -35,6 +35,18 @@ const StyledButtonHamburger = styled(ButtonHamburger)`
   margin-left: auto;
 `;
 
+const Text = styled.p(
+  ({ theme }) => css`
+    color: ${theme.colors.ink800};
+    padding: 32px;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+  `
+);
+
 const Nav = () => {
   const [navIsOpen, setNavIsOpen] = useState(false);
 
@@ -52,6 +64,10 @@ const Nav = () => {
       />
       <StyledButtonHamburger isOpen={navIsOpen} toggleNav={toggleNav} />
       <NavMainDropdown navIsOpen={navIsOpen}>
+        <Text>
+          Only one page now <br />
+          but nav animations are fun...
+        </Text>
         <UnderConstructionPage />
       </NavMainDropdown>
     </NavContainer>

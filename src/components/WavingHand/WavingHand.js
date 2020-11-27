@@ -50,6 +50,7 @@ const Hand = styled.div(
 const HandTop = styled(Hand)(
   (props) => css`
     box-shadow: none;
+    will-change: transform;
   `
 );
 
@@ -96,12 +97,13 @@ const Thumb = styled.div(
   `
 );
 
-const WavingHand = (props) => {
-  const size = props.size || defaultSize;
-  const color = props.color || defaultColor;
-
+const WavingHand = ({
+  className = "",
+  size = defaultSize,
+  color = defaultColor,
+}) => {
   return (
-    <Wrapper size={size}>
+    <Wrapper size={size} className={className}>
       <Hand color={color} size={size}>
         <Finger color={color} size={size} />
         <Finger color={color} size={size} />

@@ -22,6 +22,7 @@ const styleTheme = {
     green900: "#16241c",
     yellow500: "#ECC64A",
     red500: "#EA503E",
+    blue500: "#3083DC",
     black: "#000",
     white: "#fff",
   },

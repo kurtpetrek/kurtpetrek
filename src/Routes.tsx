@@ -20,8 +20,7 @@ const Routes = () => {
   return (
     <Router>
       <Switch>
-        <MainRoute exact path="/" component={UnderConstructionPage} />
-        <MainRoute exact path="/foo" component={HomePage} />
+        <MainRoute path="/" component={HomePage} />
       </Switch>
     </Router>
   );
