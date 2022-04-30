@@ -2,6 +2,9 @@ const styleTheme = {
   nav: {
     height: "68px",
   },
+  sizes: {
+    containerWidth: "960px",
+  },
   colors: {
     ink100: "#d7dcdf",
     ink200: "#afb9bf",

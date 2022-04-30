@@ -12,6 +12,7 @@ const BarContainer = styled.div(
     margin: 0 32px;
     overflow: hidden;
     position: relative;
+    opacity: 0.25;
 
     @media (max-width: 500px) {
       margin: 0 8px;
