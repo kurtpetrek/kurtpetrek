@@ -9,8 +9,12 @@ const FooterContainer = styled.div`
     width: 100%;
     align-items: center;
     justify-content: space-around;
-    // background: black;
+    background: #fff;
     padding: 7px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
   }
 
   .footer-icon-container {
@@ -26,7 +30,6 @@ const FooterContainer = styled.div`
     height: calc(${size} * 0.96);
     border: calc(${size} * 0.05) solid white;
     border-radius: 50%;
-    // background: #fff;
     transform: translate(-50%, -50%) rotate(0deg);
     left: 50%;
     top: 50%;

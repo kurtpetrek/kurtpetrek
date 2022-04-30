@@ -733,9 +733,9 @@ const Container = styled.div`
   }
 `;
 
-const TypewriterAnimation = () => {
+const TypewriterAnimation = ({ className }: { className?: string }) => {
   return (
-    <Container>
+    <Container className={className}>
       <div
         className="type-writer-anm-container"
         dangerouslySetInnerHTML={{

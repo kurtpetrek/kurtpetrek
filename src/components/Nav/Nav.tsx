@@ -57,11 +57,11 @@ const Nav = () => {
   return (
     <NavContainer>
       <HomeLink to="/">Kurt Petrek</HomeLink>
-      <AnimatedBar
+      {/* <AnimatedBar
         color={
           navIsOpen ? styleTheme.colors.green200 : styleTheme.colors.ink200
         }
-      />
+      /> */}
       <StyledButtonHamburger isOpen={navIsOpen} toggleNav={toggleNav} />
       <NavMainDropdown navIsOpen={navIsOpen}>
         <Text>

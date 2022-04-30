@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components/macro";
 
-const panelAnimationLength = 0.3;
+const panelAnimationLength = 0.2;
 
 const Container = styled.div<{ navIsOpen?: boolean }>(
   (props) => css`
