@@ -4,8 +4,10 @@ import ButtonHamburger from "./Hamburger";
 import NavMainDropdown from "./NavMainDropdown";
 import { Link } from "react-router-dom";
 import AnimatedBar from "./AnimatedBar";
-import styleTheme from "../../constants/styles/styleTheme";
-import UnderConstructionPage from "../../pages/UnderConstructionPage/UnderConstructionPage";
+import {
+  navScrollItemClassName,
+  navScrollSubItemClassName,
+} from "../../constants/navigation";
 
 const NavContainer = styled.nav(
   (props) => css`
@@ -31,6 +33,26 @@ const HomeLink = styled(Link)(
   `
 );
 
+const NavLink = styled.button(
+  ({ theme }) => css`
+    border: none;
+    padding: 14px 32px;
+    background: none;
+    color: ${theme.colors.ink700};
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+
+    &:hover {
+      color: ${theme.colors.blue500};
+    }
+  `
+);
+
+const NavSubLink = styled(NavLink)`
+  padding: 14px 32px 14px 64px;
+`;
+
 const StyledButtonHamburger = styled(ButtonHamburger)`
   margin-left: auto;
 `;
@@ -54,6 +76,45 @@ const Nav = () => {
     setNavIsOpen(!navIsOpen);
   };
 
+  const renderNavItems = () => {
+    const navItems = [
+      ...document.querySelectorAll(`.${navScrollItemClassName}`),
+    ].map((element, i) => {
+      const text = element.textContent;
+      return (
+        <NavLink
+          onClick={() => {
+            element.scrollIntoView({ behavior: "smooth", block: "center" });
+            setNavIsOpen(false);
+          }}
+          key={text || i}
+        >
+          {text}
+          <AnimatedBar />
+        </NavLink>
+      );
+    });
+
+    const navSubItems = [
+      ...document.querySelectorAll(`.${navScrollSubItemClassName}`),
+    ].map((element, i) => {
+      const text = element.textContent;
+      return (
+        <NavSubLink
+          onClick={() => {
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
+            setNavIsOpen(false);
+          }}
+          key={text || i}
+        >
+          {text}
+          <AnimatedBar />
+        </NavSubLink>
+      );
+    });
+    return [...navItems, ...navSubItems];
+  };
+
   return (
     <NavContainer>
       <HomeLink to="/">Kurt Petrek</HomeLink>
@@ -64,11 +125,7 @@ const Nav = () => {
       /> */}
       <StyledButtonHamburger isOpen={navIsOpen} toggleNav={toggleNav} />
       <NavMainDropdown navIsOpen={navIsOpen}>
-        <Text>
-          Only one page now <br />
-          but nav animations are fun...
-        </Text>
-        <UnderConstructionPage />
+        {renderNavItems()}
       </NavMainDropdown>
     </NavContainer>
   );

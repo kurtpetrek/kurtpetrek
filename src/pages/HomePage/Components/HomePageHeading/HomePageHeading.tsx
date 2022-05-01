@@ -7,6 +7,10 @@ import {
   Text,
 } from "../../../../components/General/Typography";
 import styled, { css } from "styled-components/macro";
+import {
+  navScrollItemClassName,
+  navScrollMarginTop,
+} from "../../../../constants/navigation";
 
 const breakpoint = `700px`;
 
@@ -34,9 +38,13 @@ const TypewriterAnimationStyled = styled(TypewriterAnimation)`
   }
 `;
 
-const HomePageHeading = () => {
+const ScrollableH2 = styled(H2)`
+  scroll-margin-top: ${navScrollMarginTop};
+`;
+
+const HomePageHeading = ({ className }: { className?: string }) => {
   return (
-    <Container data-testid="HomePageHeading">
+    <Container data-testid="HomePageHeading" className={className}>
       <HeadingContainer data-testid="HomePageHeading">
         <div>
           <H1>Hello World!</H1>
@@ -68,7 +76,7 @@ const HomePageHeading = () => {
         </div>
         <TypewriterAnimationStyled />
       </HeadingContainer>
-      <H2>Background</H2>
+      <ScrollableH2 className={navScrollItemClassName}>Background</ScrollableH2>
       <Text>
         I graduated from the{" "}
         <ExternalLink href="https://uc.edu" target="_blank" rel="noopener">
